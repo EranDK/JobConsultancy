@@ -17,17 +17,3 @@ body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-/*** Job Listing ***/
-
-.job-item {
-    border: 1px;
-    border-radius: 2px;
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    transition: .5s;
-}
-
-.job-item:hover {
-    border-color: rgba(0, 0, 0, .08);
-    box-shadow: none;
-}
-

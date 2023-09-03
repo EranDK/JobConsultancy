@@ -21,10 +21,14 @@ public class MainController {
         return "contact";
     }
 
-    @GetMapping("/joblist")
-    public String showJobs(){
+    @GetMapping("/login")
+    public String showLogin(){
+        return "login";
+    }
 
-        return "joblist";
+    @GetMapping("/jobs")
+    public String showJobs(){
+        return "jobs";
     }
 
 
