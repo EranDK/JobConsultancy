@@ -3,16 +3,21 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+    <!--<title> Responsive Registration Form | CodingLab </title>-->
+    <!--<link rel="stylesheet" href="style.css">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--<meta charset="utf-8">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    <title>Home Page</title>
-
-
+    <link rel="stylesheet" th:href="@{/css/logstyle.css}">
+    <title>Registration</title>
 </head>
 
 <body>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
@@ -38,26 +43,38 @@
         </div>
     </div>
 </nav>
-
-<div id="mainHeader" class="bg-image p-5 text-center shadow-1-strong rounded mb-0 text-white">
-    <section id="HeadingMain" class="container">
-        <h1 class="mb-3 h2">Find Your Dream Job</h1>
-        <p>We connect talented individuals with their ideal opportunities</p>
-        <button class="btn btn-light btn-lg">Get Started</button>
-    </section>
+<br>
+<div class="wrapper">
+    <div class="title">
+        Login Form
+    </div>
+    <form action="#">
+        <div class="field">
+            <input type="text" required>
+            <label>Email Address</label>
+        </div>
+        <div class="field">
+            <input type="password" required>
+            <label>Password</label>
+        </div>
+        <div class="content">
+            <div class="checkbox">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="pass-link">
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+        <div class="field">
+            <input type="submit" value="Login">
+        </div>
+        <div class="signup-link">
+            Not a member? <a href="registration">Signup now</a>
+        </div>
+    </form>
 </div>
-
-
-
-<!--</section>
-<div class="container text-center my-5">
-    <h1>Welcome to WorldWide Job Consultancy Services</h1>
-    <h6>We understand that navigating the complex landscape of the job
-        market can be a daunting task. Whether you're a seasoned professional looking for new opportunities
-        or a recent graduate taking your first steps into the professional world, we're here to
-        guide you towards success.</h6>
-</div> -->
-
+<br>
 <footer class="bg-dark text-white text-center py-1">
     <div>
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
