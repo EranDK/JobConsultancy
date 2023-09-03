@@ -1,41 +1,35 @@
-package com.mycompany.controller;
+package com.mycompany;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class controller {
-    @GetMapping("/")
-    public String index() {
+public class MainController {
+
+    @GetMapping("/index")
+    public String showHomePage(){
         return "index";
     }
 
     @GetMapping("/about")
-    public String about() {
-
+    public String showAbout() {
         return "about";
     }
 
-    @GetMapping("/registration")
-    public String registration(){
-        return "registration";
-    }
-
     @GetMapping("/contact")
-    public String contact(){
+    public String showContact(){
         return "contact";
     }
 
     @GetMapping("/login")
-    public String login(){
+    public String showLogin(){
         return "login";
     }
+
     @GetMapping("/jobs")
-    public String jobs(){
+    public String showJobs(){
         return "jobs";
     }
+
+
 }
-
-
-
-
