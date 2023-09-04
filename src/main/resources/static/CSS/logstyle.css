@@ -144,3 +144,7 @@ form .pass-link a:hover,
 form .signup-link a:hover{
     text-decoration: underline;
 }
+
+.manageusers{
+    color: #262626;
+}
