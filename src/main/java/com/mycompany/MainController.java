@@ -21,11 +21,6 @@ public class MainController {
         return "contact";
     }
 
-    @GetMapping("/login")
-    public String showLogin(){
-        return "login";
-    }
-
     @GetMapping("/jobs")
     public String showJobs(){
         return "jobs";

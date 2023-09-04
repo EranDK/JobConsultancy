@@ -27,7 +27,7 @@
           <a class="nav-link active text-white" th:href="@{/jobs}">Jobs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Appoinment</a>
+          <a class="nav-link text-white" th:href="@{/appoinment}">Appoinment</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" th:href="@{/contact}">Contact</a>
@@ -45,24 +45,24 @@
   <div class="title">Registration</div>
   <div class="content">
 
-    <form>
+    <form method="post" th:action="@{/registration/save}" th:object="${user}">
       <div class="user-details">
         <div class="input-box">
           <span class="details">First Name</span>
-          <input type="text" th:field="*{firstName}" placeholder="Enter first name"  class="form-control" name="firstName" required minlength="2" maxlength="45">
+          <input type="text" th:field="*{firstName}" placeholder="Enter first name"  class="form-control" name="firstName" required minlength="2" maxlength="45"/>
         </div>
         <div class="input-box">
           <span class="details">Last Name</span>
-          <input input type="text" th:field="*{lastName}" placeholder="Enter last name"  class="form-control" name="lastName" required minlength="2" maxlength="45">
+          <input input type="text" th:field="*{lastName}" placeholder="Enter last name"  class="form-control" name="lastName" required minlength="2" maxlength="45"/>
         </div>
         <div class="input-box">
           <span class="details">Email</span>
-          <input input type="email" th:field="*{email}" placeholder="Enter email"  class="form-control" name="email" required>
+          <input input type="email" th:field="*{email}" placeholder="Enter email"  class="form-control" name="email" required minlength="5" maxlength="50" />
         </div>
 
         <div class="input-box">
           <span class="details">Password</span>
-          <input input type="password" th:field="*{password}" placeholder="Enter password"  class="form-control" name="password" required minlength="2" maxlength="45">
+          <input input type="password" th:field="*{password}" placeholder="Enter password"  class="form-control" name="password" required/>
         </div>
 
       </div>
@@ -88,6 +88,7 @@
       </div>-->
       <div class="button">
         <input type="submit" value="Register">
+
       </div>
 
       <div class="secondary-button">
@@ -100,6 +101,11 @@
 </div>
 
 <br>
+
+<!--<div class="container-fluid text-center">
+  <a class="manageusers" th:href="@{/users}">Manage Users</a>
+</div>-->
+
 <footer class="bg-dark text-white text-center py-1">
   <div>
     <p>&copy; 2023 The Jobs. All rights reserved.</p>
