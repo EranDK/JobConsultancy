@@ -50,15 +50,20 @@ public class UserController {
         else
             return "redirect:/login";
     }
+
     @GetMapping("/userhome")
     public String showUserHome() {
         return "userhome";
     }
 
-    @GetMapping("/appoinment")
-    public String showAppoinment(){
-        return "appoinment";
+    @GetMapping("/appointment")
+    public String showAppointment(Model model){
+        User user = new User();
+        model.addAttribute("user", new User());
+        return "appointment";
     }
+
+
 
 
 

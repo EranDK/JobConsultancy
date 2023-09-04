@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/regstyle.css}">
-    <title>Registration</title>
+    <link rel="stylesheet" th:href="@{/css/appointment.css}">
+    <title>Appointment</title>
 </head>
 
 <body>
@@ -39,6 +39,49 @@
     </div>
 </nav>
 
+<div class="container">
+    <h1>Job Appointment Form</h1>
+    <form method="post" th:action="@{/appointment}" th:object="${user}">
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" th:field="*{name}" placeholder="Enter name"  class="form-group" name="Name" required minlength="2" maxlength="45"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" th:field="*{email}" placeholder="Enter email"  class="form-group" name="email" required/>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" th:field="*{phone}" placeholder="Enter phone"  class="form-group" name="phone" required/>
+        </div>
+        <div class="form-group">
+            <label for="jobPosition">Job Position:</label>
+            <select class="form-control" id="jobPosition" required>
+                <option disabled selected>Select a job position</option>
+                <option>Software Engineer</option>
+                <option>Marketing Manager</option>
+                <option>Product Designer</option>
+                <option>Creative Director</option>
+                <option>Wordpress Developer</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="jobPosition">Country:</label>
+            <select class="form-control" id="Select Country" required>
+                <option disabled selected>Select a job position</option>
+                <option>Australia</option>
+                <option>Canada</option>
+                <option>France</option>
+                <option>UK</option>
+                <option>USA</option>
+            </select>
+        </div>
+
+
+        <button type="submit"  th:field="*{jobs}"  class="btn btn-primary" name="jobs" required>Submit</button>
+    </form>
+</div>
 
 
 <footer class="bg-dark text-white text-center py-1">
@@ -47,6 +90,7 @@
     </div>
 </footer>
 
+<script type="text/javascript" th:src="@{/JS/appointment.js}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
