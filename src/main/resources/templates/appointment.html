@@ -23,13 +23,17 @@
                     <a class="nav-link active text-white" th:href="@{/about}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" th:href="@{/jobs}">Jobs</a>
+                    <a class="nav-link active text-white" th:href="@{/joblist}">Jobs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" th:href="@{/appointment}">Appointment</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" th:href="@{/contact}">Contact</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-white" th:href="@{/joblist}">Jobs</a>
                 </li>
             </ul>
             <div><a class="nav-link text-white" th:href="@{/registration}">Registration</a></div>
@@ -38,46 +42,37 @@
     </div>
 </nav>
 
-<div class="container">
-    <h1>Job Appointment Form</h1>
-    <form method="post" th:action="@{/appointment}" th:object="${user}">
-        <div class="form-group">
-            <label for="fullName">Full Name:</label>
-            <input type="text" th:field="*{name}" placeholder="Enter name" class="form-control" name="name" required minlength="2" maxlength="45"/>
-        </div>
-        <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" th:field="*{email}" placeholder="Enter email" class="form-control" name="email" required/>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" th:field="*{phone}" placeholder="Enter phone" class="form-control" name="phone" required/>
-        </div>
-        <div class="form-group">
-            <label for="jobPosition">Job Position:</label>
-            <select class="form-control" id="jobPosition" name="jobPosition" required>
-                <option disabled selected>Select a job position</option>
-                <option>Software Engineer</option>
-                <option>Marketing Manager</option>
-                <option>Product Designer</option>
-                <option>Creative Director</option>
-                <option>Wordpress Developer</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="selectedCountry">Select a country:</label>
-            <select class="form-control" id="selectedCountry" th:field="*{selectedCountry}" required>
-                <option disabled selected>Select a country</option>
-                <option th:value="Australia">Australia</option>
-                <option th:value="Canada">Canada</option>
-                <option th:value="France">France</option>
-                <option th:value="UK">UK</option>
-                <option th:value="USA">USA</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary" name="jobs">Submit</button>
-    </form>
-</div>
+<section>
+    <div class="forms" >
+        <h3 id="FormHeader">Appointment</h3>
+        <form method="post" th:action="@{/appointments/save}" th:object="${appointment}">
+            <div class="mb-3">
+                <label class="form-label">Date</label>
+                <input type="date" th:field="*{date}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Time</label>
+                <input type="time" th:field="*{time}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <tr>
+                    <label class="form-label">Country</label>
+                </tr>
+                <div class="mb-3">
+                    <td>
+                        <select name="country"  id="country" th:field="*{country}" class="form-control">
+                            <option th:each="country : ${countryList}"
+                                    th:value="${country.name}"
+                                    th:text="${country.name}">
+                            </option>
+                        </select>
+                    </td>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
 
 <footer class="bg-dark text-white text-center py-1">
     <div>
