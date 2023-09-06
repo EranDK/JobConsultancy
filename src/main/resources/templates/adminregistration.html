@@ -1,18 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!doctype html>
 <!--suppress ALL -->
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
 
     <meta charset="UTF-8">
-    <!--<title> Responsive Registration Form | CodingLab </title>-->
-    <!--<link rel="stylesheet" href="style.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--<meta charset="utf-8">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/logstyle.css}">
+    <link rel="stylesheet" th:href="@{/css/regstyle.css}">
     <title>Registration</title>
 </head>
 
@@ -39,34 +43,60 @@
                 </li>
             </ul>
             <div><a class="nav-link text-white" th:href="@{/registration}">Registration</a></div>
-            <div><a class="nav-link text-white" th:href="@{/adminlogin}">Admin Login</a></div>
+
+            <div><a class="nav-link text-white" th:href="@{/login}">Login</a></div>
         </div>
     </div>
 </nav>
-<br>
-<div class="wrapper">
-    <div class="title">
-        Login Form
-    </div>
-    <form method="post"th:action="@{/loginpage}" th:object="${user}">
-        <div class="field">
-            <input type="email" th:field="*{email}"  class="form-control" name="email" required/>
-            <label>Email Address</label>
-        </div>
-        <div class="field">
-            <input type="password" th:field="*{password}"  class="form-control" name="password" required/>
-            <label>Password</label>
-        </div>
 
-        <div class="field">
-            <input type="submit" value="Login">
-        </div>
-        <div class="signup-link">
-            Not a member? <a th:href="@{/registration}">Signup now</a>
-        </div>
-    </form>
-</div>
 <br>
+
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+
+        <form method="post" th:action="@{/registration/save}" th:object="${user}">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input type="text" th:field="*{firstName}" placeholder="Enter first name"  class="form-control" name="firstName" required minlength="2" maxlength="45"/>
+                </div>
+                <div class="input-box">
+                    <span class="details">Last Name</span>
+                    <input input type="text" th:field="*{lastName}" placeholder="Enter last name"  class="form-control" name="lastName" required minlength="2" maxlength="45"/>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input input type="email" th:field="*{email}" placeholder="Enter email"  class="form-control" name="email" required minlength="5" maxlength="50" />
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input input type="password" th:field="*{password}" placeholder="Enter password"  class="form-control" name="password" required/>
+                </div>
+
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Register">
+
+            </div>
+
+            <div class="secondary-button">
+
+                <input type="reset" value="Reset">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<br>
+
+<!--<div class="container-fluid text-center">
+  <a class="manageusers" th:href="@{/users}">Manage Users</a>
+</div>-->
+
 <footer class="bg-dark text-white text-center py-1">
     <div>
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
