@@ -1,5 +1,6 @@
-package com.mycompany.staff;
+package com.mycompany.repository;
 
+import com.mycompany.model.Admin;
 import org.springframework.data.repository.CrudRepository;
 
 public interface AdminRepository extends CrudRepository<Admin,Integer> {

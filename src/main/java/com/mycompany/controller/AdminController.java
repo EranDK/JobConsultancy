@@ -1,7 +1,9 @@
-package com.mycompany.staff;
+package com.mycompany.controller;
 
 
-import com.mycompany.staff.AdminService;
+import com.mycompany.model.Admin;
+import com.mycompany.repository.AdminRepository;
+import com.mycompany.service.AdminService;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

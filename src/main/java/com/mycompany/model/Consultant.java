@@ -1,10 +1,11 @@
-package com.mycompany.staff;
+package com.mycompany.model;
+
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "adminlogin")
-public class Admin {
+@Table(name = "consultant login")
+public class Consultant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
