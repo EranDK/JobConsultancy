@@ -1,4 +1,4 @@
-package com.mycompany;
+package com.mycompany.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,10 +21,10 @@ public class MainController {
         return "contact";
     }
 
-    @GetMapping("/jobs")
+    @GetMapping("/joblist")
     public String showJobs(){
-        return "jobs";
-    }
 
+        return "joblist";
+    }
 
 }

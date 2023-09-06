@@ -1,10 +1,10 @@
-package com.mycompany.staff;
+package com.mycompany.model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "adminlogin")
-public class Admin {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,7 +65,7 @@ public class Admin {
 
     @Override
     public String toString() {
-        return "{" +
+        return "User{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
