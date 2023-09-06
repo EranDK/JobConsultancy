@@ -1,27 +1,36 @@
-package com.mycompany.staff;
+package com.mycompany.job;
+
 
 import jakarta.persistence.*;
 
 @Entity
-public class Country {
+public class Job {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
     @Column(length = 100,nullable = false,unique = true )
     private String name;
 
-
-
-    public Country() {
+    public Job(){
 
     }
 
+    public Job(Integer id){
+        this.id =id;
+    }
 
-    public Country(Integer id) {
+    public Job(String name){
+        this.name = name;
+    }
+
+    public Integer getId(){
+        return id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
-
     }
 
     public String getName() {
@@ -31,18 +40,4 @@ public class Country {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Country(String name){
-        this.name=name;
-    }
-
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
 }

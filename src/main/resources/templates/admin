@@ -6,6 +6,58 @@
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"  />
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<div class="container-fluid">
+    <a class="navbar-brand text-white" th:href="@{/}">Home</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active text-white" th:href="@{/about}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white" th:href="@{/jobs}">Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/appoinment}">Appoinment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/contact}">Contact</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/country}">Country</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/consultant}">Consultant</a>
+            </li>
+        </ul>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" th:href="@{/registration}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Registration
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" th:href="@{/registration}">Registration</a>
+                <a class="dropdown-item" th:href="@{/adminregistration}">Admin Registration</a>
+                <div class="dropdown-divider"></div>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" th:href="@{/login}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" th:href="@{/login}">Login</a>
+                <a class="dropdown-item" th:href="@{/adminlogin}">Admin Login</a>
+                <div class="dropdown-divider"></div>
+            </div>
+        </li>
+
+    </div>
+</div>
+</nav>
 <div class="container-fluid text-center">
     <div><h2>Manage Users</h2></div>
     <div class="m-2">
