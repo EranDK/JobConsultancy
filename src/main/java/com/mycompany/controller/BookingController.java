@@ -28,11 +28,11 @@ public class BookingController {
     @GetMapping("/appointments")
     public String showAppointmentPage(Model model){
         List<Country> listCountries= countryrepo.findAll();
-        model.addAttribute("booking", new Booking());
         model.addAttribute("listCountries",listCountries);
         List<Job>listJobs = jobrepo.findAll();
-        model.addAttribute("booking", new Booking());
         model.addAttribute("listJobs", listJobs);
+        model.addAttribute("booking", new Booking());
+
 
         return "appointments";
     }

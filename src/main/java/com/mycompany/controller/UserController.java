@@ -47,14 +47,14 @@ public class UserController {
         User dbUser = userRepository.findByEmail(email);
         Boolean isPasswordMatch= BCrypt.checkpw(password,dbUser.getPassword());
         if(isPasswordMatch)
-            return "redirect:/userhome";
+            return "redirect:/adminhome";
         else
             return "redirect:/login";
     }
 
-    @GetMapping("/userhome")
+    @GetMapping("/adminhome")
     public String showUserHome() {
-        return "userhome";
+        return "adminhome";
     }
 
 }
