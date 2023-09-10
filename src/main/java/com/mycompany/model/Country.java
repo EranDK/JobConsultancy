@@ -1,10 +1,9 @@
-package com.mycompany.job;
-
+package com.mycompany.model;
 
 import jakarta.persistence.*;
 
 @Entity
-public class Job {
+public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,19 +12,12 @@ public class Job {
     @Column(length = 100,nullable = false,unique = true )
     private String name;
 
-    public Job(){
+
+    public Country() {
 
     }
 
-    public Job(Integer id){
-        this.id =id;
-    }
-
-    public Job(String name){
-        this.name = name;
-    }
-
-    public Integer getId(){
+    public Integer getId() {
         return id;
     }
 

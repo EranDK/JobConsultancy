@@ -194,3 +194,11 @@ form .secondary-button input:hover{
         flex-direction: column;
     }
 }
+
+.col-lg-4{
+    color: #262626;
+}
+
+.card{
+    background-color: #71b7e6;
+}

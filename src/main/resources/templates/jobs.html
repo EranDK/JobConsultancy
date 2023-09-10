@@ -2,7 +2,7 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add new Country</title>
+    <title>Add new Job</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
@@ -16,7 +16,7 @@
     <h1>Add New Field</h1>
 </div>
 
-<form th:action="@{/jobs/save}" th:object="${jobs}" method="post"
+<form th:action="@{/jobs/save}" th:object="${job}" method="post"
       style="max-width: 600px;margin: 0 auto;">
     <div class="m-3">
         <div class="form-group-row">
@@ -31,6 +31,7 @@
     <div>
         <button type="submit" class="btn btn-primary">Save</button>
     </div>
+
 
 </form>
 

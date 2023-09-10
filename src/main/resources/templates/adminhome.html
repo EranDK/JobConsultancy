@@ -20,51 +20,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active text-white" th:href="@{/about}">About</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link active text-white" th:href="@{/jobs}">Jobs</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" th:href="@{/appoinments}">Appoinment</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" th:href="@{/contact}">Contact</a>
-            </li>
 
             <li class="nav-item">
                 <a class="nav-link text-white" th:href="@{/country}">Country</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link text-white" th:href="@{/consultant}">Consultant</a>
             </li>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" th:href="@{/joblist}">Jobs</a>
-            </li>
         </ul>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" th:href="@{/registration}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Registration
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" th:href="@{/registration}">Registration</a>
-                <a class="dropdown-item" th:href="@{/adminregistration}">Admin Registration</a>
-                <div class="dropdown-divider"></div>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" th:href="@{/login}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Login
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" th:href="@{/login}">Login</a>
-                <a class="dropdown-item" th:href="@{/adminlogin}">Admin Login</a>
-                <div class="dropdown-divider"></div>
-            </div>
-        </li>
 
     </div>
 </div>
@@ -72,6 +40,60 @@
 
 <h1>welcome Admin home page</h1>
 
+<section class="featured-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Job Consultant</h5>
+                        <p class="card-text">Register Job Consultants</p>
+                        <a type="submit" th:href="@{/consultantregistration}" class="btn btn-primary">Add</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Appointment</h5>
+                        <p class="card-text">Create Appointments for Customers</p>
+                        <a type="submit" th:href="@{/appointments}" class="btn btn-primary">Create</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Country</h5>
+                        <p class="card-text">Add Countries</p>
+                        <a type="submit" th:href="@{/country}" class="btn btn-primary">add</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Jobs</h5>
+                        <p class="card-text">Add Jobs</p>
+                        <a type="submit" th:href="@{/jobs}" class="btn btn-primary">add</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">View Appoinment Schedule</h5>
+                    <p class="card-text">view appoinmentsr</p>
+                    <a type="submit" th:href="@{/history}" class="btn btn-primary">view</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<br>
 <footer class="bg-dark text-white text-center py-1">
     <div>
         <p>&copy; 2023 The Jobs. All rights reserved.</p>

@@ -16,14 +16,14 @@ public class JobController {
 
     @GetMapping("/jobs")
     public String showJobPage(Model model){
-        model.addAttribute("Job" , new Job());
+        model.addAttribute("job" , new Job());
         return "jobs";
     }
 
     @PostMapping("/jobs/save")
     public String addJobList(Job job) {
         repo.save(job);
-        return "jobs";
+        return "adminhome";
     }
 
 
