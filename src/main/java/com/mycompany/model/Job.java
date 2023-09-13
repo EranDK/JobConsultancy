@@ -17,6 +17,7 @@ public class Job {
     }
 
     public Job(Integer id){
+
         this.id =id;
     }
 
@@ -25,6 +26,7 @@ public class Job {
     }
 
     public Integer getId(){
+
         return id;
     }
 

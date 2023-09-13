@@ -3,6 +3,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -40,11 +41,16 @@
 
 <section>
     <div class="forms">
-        <h3 id="FormHeader">Add New Job</h3>
-        <form id="appointment-form" th:action="@{/jobs/save}" method="post" >
+        <h3 id="FormHeader">Job Category</h3>
+        <p id="details">Edit Jobs in Master List</p>
+        <form id="appointment-form" th:action="@{/jobs/save}" th:object="${job}" method="post">
             <div class="mb-3">
-                <br>
-                <input type="text" class="form-control"  name="name" required>
+                <label class="form-label">Country ID</label>
+                <input readonly="readonly" class="form-control"name="id" th:value="${job.id}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Enter Job Category</label>
+                <input type="text" class="form-control" name="name" th:value="${job.name}" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-secondary">Clear</button>
@@ -53,22 +59,8 @@
 </section>
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-
-<footer class="bg-dark text-white text-center py-1">
+<footer class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
     </div>
