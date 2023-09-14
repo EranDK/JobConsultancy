@@ -24,7 +24,7 @@
                     <a class="nav-link active text-white" th:href="@{/about}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" th:href="@{/joblist}">Jobs</a>
+                    <a class="nav-link active text-white" th:href="@{/jobs}">Jobs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" th:href="@{/appoinments}">Appoinment</a>
@@ -41,12 +41,14 @@
 </nav>
 
 <br>
+<br>
+<br>
 
 <div class="container">
     <div class="title">Consultant Registration</div>
     <div class="content">
 
-        <form method="post" th:action="@{/consultantregistration/save}" th:object="${user}">
+        <form method="post" th:action="@{/consultantregistration/save}" th:object="${consultant}">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">First Name</span>
@@ -81,6 +83,9 @@
     </div>
 </div>
 
+<br>
+<br>
+<br>
 <br>
 
 <footer class="bg-dark text-white text-center py-1">
