@@ -36,14 +36,18 @@
 <section>
     <div class="forms" >
         <h3 id="FormHeader">Appointment</h3>
-        <form th:action="@{/appointments/save}" th:object="${booking}" method="post" >
+        <form th:action="@{/appointments/update}" th:object="${booking}" method="post" >
+            <div class="mb-3">
+                <label class="form-label">Country ID</label>
+                <input readonly="readonly" class="form-control"name="id" th:value="${id}">
+            </div>
             <div class="mb-3">
                 <label class="form-label">Date</label>
-                <input type="date" name="date" class="form-control" required>
+                <input type="date" name="date" th:value="*{date}" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Time</label>
-                <input type="time" name="time" class="form-control" required>
+                <input type="time" name="time" th:value="*{time}" class="form-control" required>
             </div>
             <div class="mb-3">
                 <tr>
@@ -51,7 +55,7 @@
                 </tr>
                 <div class="mb-3">
                     <td>
-                        <select th:field="*{country}" class="form-control" required>
+                        <select th:field="*{country}" name="country"  class="form-control" required>
                             <th:block th:each="con : ${listCountries}" >
                                 <option th:text="${con.name}" th:value="${con.id}" />
                             </th:block>
@@ -64,7 +68,7 @@
                     </tr>
                     <div class="mb-3">
                         <td>
-                            <select th:field="*{jobtype}" class="form-control" required>
+                            <select  th:field="*{jobtype}" name="jobtype" class="form-control" required>
                                 <th:block th:each="job : ${listJobs}" >
                                     <option th:text="${job.name}" th:value="${job.id}" />
                                 </th:block>
